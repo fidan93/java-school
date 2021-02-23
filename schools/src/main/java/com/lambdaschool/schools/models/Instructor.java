@@ -27,6 +27,8 @@ public class Instructor
     @Column(nullable = false)
     private String name;
 
+    //@Transient
+    private String advice;
     /**
      * List of courses associated with this instructor. Does not get saved in the database directly.
      * Forms a one to many relationship with courses. One instructor to many courses.
@@ -114,5 +116,26 @@ public class Instructor
     public void setCourses(List<Course> courses)
     {
         this.courses = courses;
+    }
+
+    public String getAdvice()
+    {
+        return advice;
+    }
+
+    public void setAdvice(String advice)
+    {
+        this.advice = advice;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Instructor{" +
+            "instructorid=" + instructorid +
+            ", name='" + name + '\'' +
+            ", advice='" + advice + '\'' +
+            ", courses=" + courses +
+            '}';
     }
 }
